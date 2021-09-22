@@ -1,13 +1,13 @@
 package compania;
 
-import java.security.PublicKey;
-
 public class Persona {
-    private String nombre;
-    private String apellido;
-    private String fech_nac;
-    private String direccion;
-    private String telefono;
+    protected String nombre;
+    protected String apellido;
+    protected String fech_nac;
+    protected String direccion;
+    protected String telefono;
+    protected Integer ingreso;
+    protected double impuestoGeneral;
 
   public Persona(String nombre, String apellido, String fech_nac, String direccion, String telefono){
       this.nombre= nombre;
@@ -22,7 +22,9 @@ public class Persona {
         this.telefono=telefono;
     }
 
+    public Persona() {
 
+    }
 
     public String getNombre() {
         return nombre;
@@ -61,7 +63,24 @@ public class Persona {
         return telefono;
     }
 
+    public void mostrarDatos(){
+        System.out.println("Los Datos completos de persona es: ");
+        System.out.println("Nombre: "+this.nombre+ "\nApellido: "+this.apellido+"\nFecha Nacimiento: "+this.fech_nac+"\nDireccion: "+this.direccion+"" +
+                "\nTelefono: "+this.direccion);
 
+    }
+
+    public void datosParaCalcularRenta(Integer ingreso, double impuestoGeneral){
+        this.ingreso=ingreso;
+        this.impuestoGeneral= impuestoGeneral;
+
+        
+    }
+    public double impuesto(){
+        System.out.println("Impuesto calculado para la persona es: ");
+
+        return +ingreso*impuestoGeneral;
+    }
 
 
 }
