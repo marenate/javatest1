@@ -42,6 +42,37 @@ public class Main {
         persona[2] = new PersonaJuridica();
         persona[3] = new Empleado();
 
+        /*
+        * Se tuvo que actualizar la clase Persona para tener los siguientes metodos.
+        * Encontraras el nuevo codigo en Persona.java a partir de la linea 93.
+        *
+        * Recuerda que cuando hacemos implicit casting, perdemos las propiedades de las clases concretas.
+        * Por ejemplo.
+        *
+        * class Persona {}
+        *
+        * class PersonaNatural extends Persona{
+        *   public void datosParaCalcularRentaPersona(){...}
+        * }
+        *
+        * ----------------------- ERROR DE COMPILACION
+        * Persona personaNatural = new PersonaNatural();
+        * personaNatural.datosParaCalcularRentaPersona();
+        *
+        * Ésto porque Persona no tiene ningun metodo llamado datosParaCalcularRentaPersona.
+        *
+        * -------------------------- COMPILA
+        * En cambio si ponemos un metodo con la misma firma en Persona, entonces si podemos llamar al metodo.
+         * class Persona {
+         *   public void datosParaCalcularRentaPersona(){...}
+         * }
+         *
+         * class PersonaNatural extends Persona{
+         *   public void datosParaCalcularRentaPersona(){...}
+         * }
+        *
+        *
+        * */
         persona[0].datosParaCalcularRenta(100, 10);
         persona[1].datosParaCalcularRentaPersona(500, 1, 10);
         persona[2].datosParaCalcularRentaPersonaJuridica(1000);

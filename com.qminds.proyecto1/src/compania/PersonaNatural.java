@@ -1,28 +1,30 @@
 package compania;
 
-public class PersonaNatural extends Persona{
+public class PersonaNatural extends Persona {
     private String dni;
     private char sexo;
     private String estado_civil;
     private Integer seguros;
 
-    public PersonaNatural(String nombre, String apellido, String fech_nac, String direccion, String telefono, String dni,  char sexo, String estado_civil){
+    public PersonaNatural(String nombre, String apellido, String fech_nac, String direccion, String telefono, String dni, char sexo, String estado_civil) {
         super(nombre, apellido, fech_nac, direccion, telefono);
-        this.dni=dni;
-        this.sexo=sexo;
-        this.estado_civil=estado_civil;
+        this.dni = dni;
+        this.sexo = sexo;
+        this.estado_civil = estado_civil;
 
     }
-    public PersonaNatural(){
+
+    public PersonaNatural() {
 
     }
 
     @Override
-    public void mostrarDatos(){
+    public void mostrarDatos() {
         System.out.println("Nombre PersonaNatural");
         System.out.println("Nombre Completo: Marena Venancino Chuquibal\n");
 
     }
+
     public String getDni() {
         return dni;
     }
@@ -30,6 +32,7 @@ public class PersonaNatural extends Persona{
     public void setDni(String dni) {
         this.dni = dni;
     }
+
     public char getSexo() {
         return sexo;
     }
@@ -46,16 +49,17 @@ public class PersonaNatural extends Persona{
         this.estado_civil = estado_civil;
     }
 
-    public void datosParaCalcularRentaPersona(Integer ingreso, double impuestoGeneral, Integer seguros){
-        this.ingreso=ingreso;
-        this.impuestoGeneral= impuestoGeneral;
-        this.seguros=seguros;
+    public void datosParaCalcularRentaPersona(Integer ingreso, double impuestoGeneral, Integer seguros) {
+        this.ingreso = ingreso;
+        this.impuestoGeneral = impuestoGeneral;
+        this.seguros = seguros;
 
     }
+
     @Override
-    public double impuesto(){
+    public double impuesto() {
         System.out.println("Impuesto calculado para la persona es: ");
 
-        return ingreso*impuestoGeneral/seguros;
+        return ingreso * impuestoGeneral / seguros;
     }
 }
