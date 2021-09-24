@@ -2,31 +2,28 @@ package compania;
 
 import static java.lang.System.*;
 
-public class Persona {
+public abstract class Persona {
     protected String nombre;
     protected String apellido;
     protected String fech_nac;
     protected String direccion;
     protected String telefono;
-    protected Integer ingreso;
-    protected double impuestoGeneral;
 
-  public Persona(String nombre, String apellido, String fech_nac, String direccion, String telefono){
-      this.nombre= nombre;
-      this.apellido=apellido;
-      this.fech_nac=fech_nac;
-      this.direccion=direccion;
-      this.telefono=telefono;
-  }
-    public Persona(String nombre, String direccion, String telefono){
-        this.nombre= nombre;
-        this.direccion=direccion;
-        this.telefono=telefono;
+    protected Persona(String nombre, String apellido, String fech_nac, String direccion, String telefono) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fech_nac = fech_nac;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
 
-    public Persona() {
-
+    protected Persona(String nombre, String direccion, String telefono) {
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.telefono = telefono;
     }
+
+    public abstract void ingreso();
 
     public String getNombre() {
         return nombre;
@@ -35,44 +32,43 @@ public class Persona {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public void setFech_nac(String _fech_nac){
-        fech_nac=_fech_nac;
+
+    public void setFech_nac(String _fech_nac) {
+        fech_nac = _fech_nac;
     }
-    public String getFech_nac(){
+
+    public String getFech_nac() {
         return fech_nac;
     }
 
-    public void setDireccion(String _direccion){
-        direccion=_direccion;
+    public void setDireccion(String _direccion) {
+        direccion = _direccion;
     }
 
-    public  String getDireccion(){
+    public String getDireccion() {
         return direccion;
     }
 
-    public void setApellido(String _apellido){
-        apellido=_apellido;
+    public void setApellido(String _apellido) {
+        apellido = _apellido;
     }
 
-    public String getApellido (){
+    public String getApellido() {
         return apellido;
     }
-    public void setTelefono(String _telefono){
-        telefono=_telefono;
+
+    public void setTelefono(String _telefono) {
+        telefono = _telefono;
     }
 
-    public String getTelefono(){
+    public String getTelefono() {
         return telefono;
     }
 
-    public void mostrarDatos(){
+    public void mostrarDatos() {
         out.println("Los Datos completos de persona es: ");
-        out.println("Nombre: "+this.nombre+ "\nApellido: "+this.apellido+"\nFecha Nacimiento: "+this.fech_nac+"\nDireccion: "+this.direccion+"" +
-                "\nTelefono: "+this.direccion);
+        out.println("Nombre: " + this.nombre + "\nApellido: " + this.apellido + "\nFecha Nacimiento: " + this.fech_nac + "\nDireccion: " + this.direccion + "" +
+                "\nTelefono: " + this.direccion);
 
     }
-
-
-
-
 }
