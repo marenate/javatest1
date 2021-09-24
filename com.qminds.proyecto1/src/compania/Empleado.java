@@ -1,26 +1,26 @@
 package compania;
 
-public class Empleado extends PersonaNatural{
-    double salario_basico ;
+public class Empleado extends PersonaNatural implements IngresoMensual {
+    double salario_basico;
     String codigo_empleado;
+    String dni;
+    Integer edad;
+    char sexo;
 
-
-    public Empleado(String nombre, String apellido, String fech_nac, String direccion, String telefono, String dni, Integer edad, char sexo, String estado_civil,
+    public Empleado(String nombre, String apellido, String fech_nac, String direccion, String telefono, String dni, Integer edad, char sexo,
                     double salario_basico, String codigo_empleado) {
-        super(nombre, apellido, fech_nac, direccion, telefono, dni, sexo, estado_civil);
+        super(nombre, apellido, fech_nac, direccion, telefono);
         this.salario_basico = salario_basico;
         this.codigo_empleado = codigo_empleado;
+        this.dni = dni;
+        this.edad = edad;
+        this.sexo = sexo;
+
     }
 
-    public Empleado() {
-
-    }
-
-    public void mostrarDatosEmpleado(){
-        System.out.println("Este es un metdodo de la clase empleado que hereda de la clase PersonaNatural y ésta hereda de la clase Peronsa\n");
-        System.out.println("Los datos del empleado es:");
-        System.out.println("Nobre: "+ getNombre()+"\nAppellido: "+ getApellido()+"\nFecha Nac: "+getFech_nac()+"\nDireccion: "+getDireccion()+
-                "\nTelefono: "+ getTelefono()+"\nDNI: "+getDni()+"\nSexo: "+getSexo()+"\nEstado civil: "+getEstado_civil()+"\nCon Salario: "+salario_basico);
+    @Override
+    public void ingreso() {
+        System.out.println("El Salario basico de la persona es :" + salario_basico);
     }
 
     public String getCodigo_empleado() {
@@ -33,10 +33,18 @@ public class Empleado extends PersonaNatural{
 
     @Override
     public void mostrarDatos() {
-        System.out.println("Los datos del empleado: 'empleado del mes'!!!!!!");
-        System.out.println("Sophia Tamara Cardena");
-        System.out.println("Felicidades disfrute un dia de Vacaciones\n");;
+        System.out.println("\nLos datos del empleado: 'empleado del mes'!!!!!!");
+        System.out.println("Nobre: " + super.getNombre() + ", Appellido: " + super.getApellido() + ", Fecha Nac: " + super.getFech_nac() + ", Direccion: " + super.getDireccion() +
+                ", Telefono: " + super.getTelefono() + ", DNI: " + super.getDni() + ", Sexo: " + super.getSexo() + ", Con Salario: " + salario_basico);
+
     }
 
 
+    @Override
+    public void calculoIngresoMensual() {
+        System.out.println("\nEl calculo de ingreso mensual de la persona es: ");
+        double seguro = 0.18;
+        double descuentoSeguro = salario_basico - salario_basico * seguro;
+        System.out.println("Salario básico: " + salario_basico + " - " + " Descuento Seguro: " + seguro + " x Salario básico: " + salario_basico + " = " + descuentoSeguro);
+    }
 }
