@@ -3,7 +3,7 @@ package compania;
 public class PersonaJuridica extends Persona{
     String ruc;
     String estado;
-    Integer ingreso;
+
 
     public PersonaJuridica(String nombre, String direccion, String telefono, String ruc, String estado) {
         super(nombre, direccion, telefono);
@@ -25,14 +25,4 @@ public class PersonaJuridica extends Persona{
         System.out.println("AZ Global IT Services\n");
     }
 
-    public void datosParaCalcularRentaPersonaJuridica(Integer ingreso){
-        this.ingreso=ingreso;
-
-    }
-    @Override
-    public double impuesto(){
-        System.out.println("Impuesto calculado para la persona Juridica es: ");
-
-        return ingreso*0.001;
-    }
 }

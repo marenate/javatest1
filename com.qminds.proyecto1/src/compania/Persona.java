@@ -1,5 +1,7 @@
 package compania;
 
+import static java.lang.System.*;
+
 public class Persona {
     protected String nombre;
     protected String apellido;
@@ -64,23 +66,13 @@ public class Persona {
     }
 
     public void mostrarDatos(){
-        System.out.println("Los Datos completos de persona es: ");
-        System.out.println("Nombre: "+this.nombre+ "\nApellido: "+this.apellido+"\nFecha Nacimiento: "+this.fech_nac+"\nDireccion: "+this.direccion+"" +
+        out.println("Los Datos completos de persona es: ");
+        out.println("Nombre: "+this.nombre+ "\nApellido: "+this.apellido+"\nFecha Nacimiento: "+this.fech_nac+"\nDireccion: "+this.direccion+"" +
                 "\nTelefono: "+this.direccion);
 
     }
 
-    public void datosParaCalcularRenta(Integer ingreso, double impuestoGeneral){
-        this.ingreso=ingreso;
-        this.impuestoGeneral= impuestoGeneral;
 
-        
-    }
-    public double impuesto(){
-        System.out.println("Impuesto calculado para la persona es: ");
-
-        return +ingreso*impuestoGeneral;
-    }
 
 
 }

@@ -18,16 +18,18 @@ public class Main {
         empleado.mostrarDatos();
 
         // Polimorfismo
-        Persona persona [] = new Persona[4];
-        persona [0]  = new Persona().datosParaCalcularRenta(100,10);
-        persona[1] = new PersonaNatural().datosParaCalcularRentaPersona(500,1, 10);
-        persona[2] = new PersonaJuridica().datosParaCalcularRentaPersonaJuridica(1000);
-        persona[3] = new Empleado().datosParaCalcularRentaEmpleado(500,400);
+        /*Persona persona [] = new Persona[4];
+        persona [0]  = new PersonaNatural().datosParaCalcularRenta(100.00);
+        persona[1] = new PersonaJuridica().datosParaCalcularRenta(500.00);
+        persona[2] = new Empleado.(1000);
+        persona[3] = new datosParaCalcularRentaEmpleado(500,400);
 
 
         for (Persona datosPersonas: persona){
             System.out.println("Imprimiendo impuestos"+ datosPersonas.impuesto());
         }
-    }
+    }*/
 
+
+    }
 }

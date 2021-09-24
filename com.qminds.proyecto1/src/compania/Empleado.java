@@ -3,7 +3,7 @@ package compania;
 public class Empleado extends PersonaNatural{
     double salario_basico ;
     String codigo_empleado;
-    float rentaEmpleado;
+
 
     public Empleado(String nombre, String apellido, String fech_nac, String direccion, String telefono, String dni, Integer edad, char sexo, String estado_civil,
                     double salario_basico, String codigo_empleado) {
@@ -38,16 +38,5 @@ public class Empleado extends PersonaNatural{
         System.out.println("Felicidades disfrute un dia de Vacaciones\n");;
     }
 
-    public void datosParaCalcularRentaEmpleado(Integer salario_basico, float rentaEmpleado){
-        this.salario_basico=salario_basico;
-        this.rentaEmpleado=rentaEmpleado;
 
-    }
-    @Override
-    public double impuesto(){
-        float impuesto = (float) (salario_basico - rentaEmpleado)/100;
-        System.out.println("Impuesto calculado para la persona es: ");
-
-        return impuesto;
-    }
 }

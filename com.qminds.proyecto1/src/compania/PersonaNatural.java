@@ -4,7 +4,7 @@ public class PersonaNatural extends Persona{
     private String dni;
     private char sexo;
     private String estado_civil;
-    private Integer seguros;
+
 
     public PersonaNatural(String nombre, String apellido, String fech_nac, String direccion, String telefono, String dni,  char sexo, String estado_civil){
         super(nombre, apellido, fech_nac, direccion, telefono);
@@ -46,16 +46,5 @@ public class PersonaNatural extends Persona{
         this.estado_civil = estado_civil;
     }
 
-    public void datosParaCalcularRentaPersona(Integer ingreso, double impuestoGeneral, Integer seguros){
-        this.ingreso=ingreso;
-        this.impuestoGeneral= impuestoGeneral;
-        this.seguros=seguros;
 
-    }
-    @Override
-    public double impuesto(){
-        System.out.println("Impuesto calculado para la persona es: ");
-
-        return ingreso*impuestoGeneral/seguros;
-    }
 }
